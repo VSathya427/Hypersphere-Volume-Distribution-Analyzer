@@ -24,10 +24,54 @@ double squared_norm(double *v, int dim)
     return sum;
 }
 
-
-int main(void)
+// Sequential implementation
+void ball_samp_cpu()
 {
-    printf("Started!");
+    for (int dim = 2; dim <= NUM_DIMENSIONS; dim++)
+    {
+        printf("Dimension: %d\n", dim);
+
+        double histogram[NUM_INTERVALS] = {0.0};
+        int num_inside = 0;
+
+        for (int i = 0; i < NUM_SAMPLES; i++)
+        {
+            double point[dim];
+            double norm_squared;
+
+            // Generate a random point within the hypercube
+            do
+            {
+                for (int j = 0; j < dim; j++)
+                {
+                    point[j] = 2.0 * rand_double() - 1.0;
+                }
+                norm_squared = squared_norm(point, dim);
+            } while (norm_squared > 1.0); // Reject points outside the hypersphere
+
+            // Compute the distance from the surface
+            double distance = sqrt(1.0 - norm_squared);
+
+            // Update the histogram
+            int bin = (int)(distance * NUM_INTERVALS);
+            histogram[bin]++;
+            num_inside++;
+        }
+
+        // Print the histogram
+        for (int i = 0; i < NUM_INTERVALS; i++)
+        {
+            double fraction = histogram[i] / (double)num_inside;
+            printf("%lf ", fraction);
+        }
+        printf("\n");
+    }
+}
+
+int main(int argc, char *argv[])
+{
+    srand(time(NULL));
+    ball_samp_cpu();
     return 0;
 }
 
