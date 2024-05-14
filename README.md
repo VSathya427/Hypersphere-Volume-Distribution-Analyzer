@@ -90,3 +90,5 @@ sbatch run.sh
 
 The plots I generated are cpu.png(generated using cpu version) and  surface_plot.png(generated using cuda version).
 
+I attempted the 10 points credit. I still want to try attempting the simd version.
+
