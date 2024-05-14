@@ -4,7 +4,7 @@
 #include <time.h>
 
 #define NUM_INTERVALS 100
-#define NUM_DIMENSIONS 15
+#define NUM_DIMENSIONS 16
 #define NUM_SAMPLES 3000
 
 // Function to generate a random number between 0 and 1
@@ -25,7 +25,7 @@ double squared_norm(double *v, int dim)
 }
 
 // Sequential implementation
-void ball_samp_cpu()
+void ball_samp_cpu(void)
 {
     for (int dim = 2; dim <= NUM_DIMENSIONS; dim++)
     {
@@ -68,7 +68,7 @@ void ball_samp_cpu()
     }
 }
 
-int main(int argc, char *argv[])
+int main(void)
 {
     srand(time(NULL));
     ball_samp_cpu();
