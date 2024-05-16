@@ -91,3 +91,22 @@ The plots I generated are cpu.png(generated using cpu version) and  surface_plot
 
 I attempted the 10 points credit. I still want to try attempting the simd version.
 
+-----------------------------------------------------------------------
+## Instruction to compile ball_samp-simd.c:
+
+To compile the code I used the following command:
+
+```bash
+gcc -o ball_samp-simd ball_samp-simd.c -mavx2 -lm
+```
+
+-----------------------------------------------------------------------
+## Instruction to run ball_samp-simd.c:
+
+I used this command to run the code:
+
+```bash
+./ball_samp-simd
+```
+
+I have pasted the output to output_simd.txt for the simd code. It works faster than the regular cpu version and maybe I might get result close to the one posted in piazza if I increase the number of samples. I used 3000 samples and increasing the samples is still taking a lot of time.
