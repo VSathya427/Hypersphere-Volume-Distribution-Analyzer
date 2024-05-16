@@ -19,6 +19,12 @@ Description: Compiles code and generates required file inside the folder.
 ./ball_samp-cpu
 ```
 
+I generated a graph for the cpu implementation as well. It takes way too long to run even with 3000 samples. The plot was generated using the plot below and is named cpu.png
+
+```bash
+python hist.py
+```
+
 
 -----------------------------------------------------------------------
 ## Instruction to compile ball_samp-cpu.cu:
@@ -47,14 +53,7 @@ Description: Compiles code and generates required file inside the folder.
 -----------------------------------------------------------------------
 ## Instruction to setup cuda
 
-I generated a graph for the cpu implementation as well. It takes way too long to run even with 3000 samples.
-
-```bash
-python hist.py
-```
-
 For the cuda program to generate plot I used a conda environment.
-
 
 ```bash
 module load conda 
