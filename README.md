@@ -1,5 +1,4 @@
-# CS547: Final
-## Name: Sathya Vemulapalli
+# Hypersphere-Volume-Distribution-Analyzer
 
 -----------------------------------------------------------------------
 ## Instruction to compile ball_samp-cpu.c:
@@ -89,8 +88,6 @@ sbatch run.sh
 
 The plots I generated are cpu.png(generated using cpu version) and  surface_plot.png(generated using cuda version).
 
-I attempted the 10 points credit. I still want to try attempting the simd version.
-
 -----------------------------------------------------------------------
 ## Instruction to compile ball_samp-simd.c:
 
@@ -109,4 +106,4 @@ I used this command to run the code:
 ./ball_samp-simd
 ```
 
-I have pasted the output to output_simd.txt for the simd code. It works faster than the regular cpu version and maybe I might get result close to the one posted in piazza if I increase the number of samples. I used 3000 samples and increasing the samples is still taking a lot of time.
+I have pasted the output to output_simd.txt for the simd code. It works faster than the regular cpu version. I used 3000 samples and increasing the samples is still taking a lot of time.
